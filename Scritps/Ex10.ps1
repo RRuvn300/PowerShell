@@ -23,3 +23,23 @@ else
     Write-Host "El fitxer csv NO existeix"
 }
 
+# Llegeix les dades
+$b = Read-Host -Prompt "Introdueix el teu fitxer csv" 
+$a = Test-Path $b
+
+# Informa si existeix o no el directori i si sí existeix, el mostra.
+if ($a)
+{
+    Write-Host "El directori $b sí existeix:"
+    Get-Content $b | ForEach-Object {
+        $nom, $OU, $gmail = $_.Split(',')
+        Write-Host "Usuari $nom que pertany a la UO $OU amb correu electrònic $gmail"
+        "Usuari $nom que pertany a la UO $OU amb correu electrònic $gmail" | Out-File -Append -FilePath "usuaris.txt"
+    }
+}
+else
+{
+    Write-Host "El fitxer csv NO existeix"
+}
+
+
