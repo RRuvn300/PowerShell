@@ -1,3 +1,5 @@
+# Llegeix el path del directori  
+
 $b = Read-Host -Prompt "Introdueix el teu fitxer o directori"
 $a = test-path $b
 
