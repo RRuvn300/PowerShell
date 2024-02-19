@@ -10,20 +10,13 @@ $a = test-path $b
 if ( $a -eq "True")
 {
     Write-Host "El directori" $b "sí existeix:"
-    $infcsv = Get-Content $b
-    
-    foreach ($li in $infcsv)
+    Get-Content $b | ForEach-Object
     {
-        $limit = $li -split "."
-
-        $nom = $limit[0].Trim()
-        $OU = $limit[1].Trim()
-        $gmail = $limit[2].Trim()
-
-        $output = "Usuari $nom que pertany a la UO $OU i correu electrònic $gmail" 
-        Write-Host $output
+        $nom, $OU, $gmail = $_.Split('')
+        Write-Host "Usuari $nom que pertany a la UO $OU amb correu electrònic $gmail"
+        $output | Out-File -Append -FilePath "usuaris.txt"
     }
-} 
+}
 
 else
 {
