@@ -1,7 +1,7 @@
 # Script on al posar un directori, et diu si existeix o no i el llista.
 
 # Llegeix les dades
-$b = Read-Host -Prompt "Introdueix el teu fitxer o directori" 
+$b = Read-Host -Prompt "Introdueix el teu directori" 
 $a = test-path $b
 
 # Controla que si posa un espai, surt un error
@@ -11,7 +11,7 @@ if ( $b -eq " ")
 }
 
 # Informa si existeix o no el directori i si sí existeix, el mostra.
-elseif ( $a -eq "True")
+elseif ($a)
 {
     Write-Host "El directori" $b "sí existeix, i conté:"
     Get-childItem $b
