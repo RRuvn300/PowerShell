@@ -1,8 +1,8 @@
 #Rubén Sánchez Campaner | 1.B
 
 #Declaro les dades
-$dirdest = Read-Host "Posa la teva carpeta d'origen"
-$diror = 'C:\SEGURETAT\Directori Origen'
+$diror = Read-Host "Posa la teva carpeta d'origen"
+$dirdest = 'C:\SEGURETAT\Directori Destí'
 
 #Confirmo si existeix el directori
 $test = Test-Path $diror
