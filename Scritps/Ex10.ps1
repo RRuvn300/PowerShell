@@ -10,7 +10,7 @@ if ($a)
     Write-Host "L'arxiu csv: $b,  sí existeix"
     #Llista els elements i els divideix per espais, després escriu amb les valors corresponents.
     Get-Content $b | ForEach-Object {
-        $nom, $OU, $gmail = $_.Split(',')
+        $nom, $OU, $gmail = $_.Split(' ')
         Write-Host "Usuari $nom que pertany a la UO $OU amb correu electrònic $gmail"
         #Afageix el contingut demanat al arxiu de text usuaris.txt
         "Usuari $nom que pertany a la UO $OU amb correu electrònic $gmail" | Out-File -Append -FilePath "C:\IMAGEN\usuaris.txt.txt"
