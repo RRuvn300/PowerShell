@@ -1,4 +1,4 @@
-$OUPath = "OU=Usuaris,DC=RSC,DC=itb,DC=cat"
+$OUPath = "OU=Docents,DC=RSC,DC=itb,DC=cat"
 
 $Users = Get-ADUser -Filter *  -SearchBase $OUPath -Properties *
 
